@@ -15,14 +15,35 @@
     <!-- <h2 class="name">KOMBO</h2> -->
 
     <!-- Latest Release -->
-    <div id="latest-release">
-        <!-- <h2>Latest Release</h2> -->
+    <!-- <div id="latest-release">
         <img id="latest-release-header" src="assets/latestrelease.png">
         <img id="latest-release-img" src="assets/kombo-coverart.png">
         <p>Get'in High (feat. H.Hancho & Kombo)</p>
         <a id="latest-release-link" href="https://open.spotify.com/album/2yYd1rw3QIiPgJbvgSF9bx">LISTEN NOW</a>
-    </div>
+    </div> -->
 
+    <!-- Trigger/Open The Modal -->
+    <img id="latest-release-button" src="assets/latestrelease.png"/>
+
+    <!-- The Modal -->
+    <div id="latest-release-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="latest-release-header" src="assets/latestrelease.png"/>
+            <!-- <h2>Latest Release</h2> -->
+            <!-- <iframe id="latest-release-coverart" style="border: 0; width: 350px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/album=27971770/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless></iframe> -->
+            <img id="latest-release-coverart" src="assets/kombo-coverart.png"/>
+            <p id="latest-release-title">Get'In High</p>
+            <p id="latest-release-title">(feat. H.Hancho & Kombo)</p>
+            <div class="latest-release-links">
+                <a class="latest-release-link" href="https://open.spotify.com/album/2yYd1rw3QIiPgJbvgSF9bx">Spotify</a>
+                <a class="latest-release-link" href="https://music.apple.com/us/album/getin-high-feat-h-hancho-kombo/1603283252?i=1603283253">Apple Music</a>
+            </div>
+        </div>
+
+    </div>
 
     <!-- Links -->
     <div class="links">
@@ -54,8 +75,6 @@
     <div id="sbs-div">
         <a id="sbs-link" href="https://sitesbysam.dev"><img src="assets/sitesbysamdev(LIGHTBKGD).png"/></a>
     </div>
- 
-</body>
 
 <style>
     @font-face {
@@ -100,6 +119,7 @@
         color: rgb(0, 0, 0);
         font-size: 15px;
         letter-spacing: 2px;
+        font-family: 'edo';
     }
     .signature {
         display: block;
@@ -117,51 +137,9 @@
         /* padding-top: 20px; */
     }
 
-    #latest-release {
-        max-width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        /* background: rgba(0, 0, 0, 0.596); */
-        /* box-shadow: 0px 0px 5px 5px rgb(93, 139, 105); */
-    } #latest-release p {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 25px;
-        font-weight: bolder;
-        color: rgb(132, 197, 149);
-    }
-    #latest-release-header {
-        opacity: 0.8;
-        max-width: 250px;
-    }
-    #latest-release-img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        height: auto;
-        max-width: 200px;
-        box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
-        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(90,0,0,1) 30%, rgba(0,0,0,1) 40%, rgba(73,0,0,1) 50%, rgba(75,0,0,1) 60%, rgba(200,0,0,1) 70%, rgba(0,0,0,0) 100%);
-    }
-    #latest-release-link {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 35px;
-        color: rgb(132, 197, 149);
-        
-        /* background-color: violet; */
-    }
-    #latest-release-link:hover {
-        color: rgba(255, 255, 255, 0.712);
-    }
-
-
     .links {
         padding-top: 20px;
         padding-bottom: 25px;
-        font-family: 'edo';
     } .links-headers {
         font-weight: lighter;
         color: blanchedalmond;
@@ -307,6 +285,164 @@
         text-decoration: none;
     }
 </style>
+<style>
+
+    #latest-release-button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 290px;
+        /* height: 50px; */
+        color: #fff;
+        /* opacity: 0.7; */
+        /* background: rgba(10, 247, 89, 0.445); */
+        /* border-radius: 35px; */
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background: rgb(23,164,0);
+        background: radial-gradient(circle, rgba(23,164,0,1) 0%, rgba(1,99,25,1) 41%, rgba(1,88,2,1) 61%, rgba(0,0,0,1) 100%);
+        /* background-size: 300%; */
+        margin: 15px auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 10px solid rgb(34, 34, 34);
+        width: 300px; /* Could be more or less, depending on screen size */
+        height: 85%;
+    }
+    #latest-release-header {
+        display: block;
+        margin-left: 10%;
+        margin-right: auto;
+        max-width: 80%;
+    }
+    #latest-release-coverart {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+        max-height: auto;
+        border: 4px solid gray;
+    }
+    .modal-content p {
+        text-align: center;
+        /* line-height: .4; */
+        font-size: 20px;
+    }
+    .latest-release-links {
+        padding: 10px;
+    }
+    .latest-release-link {
+        box-shadow: 0px 0px 5px 5px rgb(93, 139, 105);
+        display: block;
+        text-align: center;
+        font-size: 28px;
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+        width: 80%;
+        height: 30px;
+        color: rgb(0, 0, 0);
+        transition: 1500ms; 
+        text-decoration: none;
+        background: rgba(191, 217, 169, 0.671);
+        transform: rotate(-1deg);
+    }
+    .latest-release-link:hover {
+        transform: rotate(1deg);
+        color: rgb(191, 217, 169);
+        background: rgba(0, 0, 0, 0.623);
+        box-shadow: 0px 0px 5px 5px rgba(191, 217, 169, 0.473);
+    } 
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+</style>
+
+<script>
+    
+        // Function to find which type of device you are on
+        // const deviceTypeFun = () => {
+        //     const ua = navigator.userAgent;
+        //     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        //         return "tablet";
+        //     }
+        //     else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        //         return "mobile";
+        //     }
+        //     return "desktop";
+        // };
+
+        // Get the modal
+        var modal = document.getElementById("latest-release-modal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("latest-release-button");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        // Find out what type of device you are on
+        // const deviceType = deviceTypeFun();
+
+        // If you are on a mobile browser, use the mobile picture
+        // because the button hovers won't have any effect
+        // if (deviceType == "mobile"){
+        //     btn.src = "assets/latestrelease1.png";
+        // }
+
+        // btn.onmouseenter = function() {
+        //     btn.src = "assets/latestrelease1.png";
+        // }
+        // btn.onmouseleave = function() {
+        //     btn.src = "assets/latestrelease0.png";
+        // }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+</script>
+
+</body>
 
 
 </html>
